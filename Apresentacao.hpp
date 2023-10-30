@@ -10,6 +10,6 @@ class Apresentacao {
     private:
         std::string horario;
         Artista artista;
-}
+};
 
 #endif

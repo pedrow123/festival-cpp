@@ -13,7 +13,7 @@ class Palco {
     
     private:
         std::string nome;
-        std::list<Apresentacao> apresentacao;
+        std::list<Apresentacao*> apresentacao;
 };
 
 #endif

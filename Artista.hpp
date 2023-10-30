@@ -5,14 +5,17 @@
 #include <string>
 
 #include "Pessoa.hpp"
+#include "Musica.hpp"
 
 class Artista : public Pessoa {
     public:
-        Artista(std::string nome, int idade, bool estrangeiro);
+        Artista(std::string nome, unsigned short int idade);
+        virtual unsigned int calculaCache() const = 0;
     
     private:
-        bool estrangeiro;
         std::string tipoMusical;
+        std::list<Musica*> setlistShow;
+        bool ehInternacional;
 };
 
 #endif
