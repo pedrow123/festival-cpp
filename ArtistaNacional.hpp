@@ -2,10 +2,21 @@
 #define ARTISTA_NACIONAL_HPP
 
 #include "Artista.hpp"
-#include <list>
 
 class ArtistaNacional : public Artista {
+public:
+    ArtistaNacional(std::string nome, unsigned short int idade, std::string estado);
+    ArtistaNacional(std::string nome, unsigned short int idade, std::string tipoMusical, std::string estado);
 
+    
+    unsigned int calculaCache() const override;
+    void apresentar() const override;
+
+    std::string getEstado() const;
+    void setEstado(const std::string estado);
+
+private:
+    std::string estado;
 };
 
 #endif

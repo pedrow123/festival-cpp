@@ -6,6 +6,7 @@
 #include <list>
 
 class Artista;
+// #include "Artista.hpp"
 
 class Musica {
 
@@ -19,14 +20,14 @@ class Musica {
         void setDuracao(const unsigned short int duracaoSegundos);
         unsigned short int getDuracao() const;
         
-        void addEscritor(const Artista escritor);
-        Artista& removeEscritor(std::string nomeEscritor); 
-        std::list<Artista*>& getEscritores() const;
+        void addEscritor(Artista* const escritor);
+        Artista& removeEscritor(std::string& nomeEscritor); 
+        std::list<Artista*> getEscritores() const;
     
     private:
         std::string nome;
         uint8_t duracaoSegundos;
-        std::list<Artista*> Escritores;
+        std::list<Artista*> escritores;
 };
 
 #endif

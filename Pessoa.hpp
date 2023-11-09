@@ -1,5 +1,5 @@
-#ifndef PESSOA_H
-#define PESSOA_H
+#ifndef PESSOA_HPP
+#define PESSOA_HPP
 
 #include <cstdint>
 #include <string>
@@ -8,8 +8,8 @@
 class Pessoa {
    public:
     Pessoa();
-    Pessoa(const std::string& nomePessoa);
-    Pessoa(const std::string& nomePessoa, uint8_t idade);
+    Pessoa(const std::string nome);
+    Pessoa(const std::string nome, unsigned short idade);
 
 
     // uint64_t getCpf() const;

@@ -7,13 +7,20 @@
 #include "Apresentacao.hpp"
 
 class Palco {
-    public:
-        Palco(std::string nome);
-        Palco(std::string nome, std::list<Apresentacao> apresentacao);
-    
-    private:
-        std::string nome;
-        std::list<Apresentacao*> apresentacao;
+   public:
+    Palco(std::string nome);
+    Palco(std::string nome, std::list<Apresentacao*> apresentacoes);
+
+    void setNome(const std::string nome);
+    std::string getNome() const;
+
+    void addApresentacao(Apresentacao* const apresentacao);
+    Apresentacao& removeApresentacao(std::string& nomeArtista);
+    std::list<Apresentacao*> getApresentacoes() const;
+
+   private:
+    std::string nome;
+    std::list<Apresentacao*> apresentacoes;
 };
 
 #endif
