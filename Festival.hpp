@@ -15,7 +15,7 @@ class Festival {
     std::string getNome() const;
 
     void addPalco(Palco* const palco);
-    Palco& removePalco(std::string& nomePalco);
+    void removePalco(std::string& nomePalco);
     std::list<Palco*> getPalcos() const;
 
    private:

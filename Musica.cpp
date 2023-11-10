@@ -27,7 +27,7 @@ void Musica::addEscritor(Artista* const escritor) {
     escritores.push_back(escritor);
 }
 
-Artista& Musica::removeEscritor(std::string& nomeEscritor) {
+void Musica::removeEscritor(std::string& nomeEscritor) {
     std::list<Artista*>::iterator it{getEscritores().begin()};
     for( ; it != getEscritores().end(); ++it)
         if((*it)->getNome() == nomeEscritor)

@@ -15,7 +15,7 @@ class Palco {
     std::string getNome() const;
 
     void addApresentacao(Apresentacao* const apresentacao);
-    Apresentacao& removeApresentacao(std::string& nomeArtista);
+    void removeApresentacao(std::string& nomeArtista);
     std::list<Apresentacao*> getApresentacoes() const;
 
    private:

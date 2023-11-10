@@ -16,7 +16,7 @@ void Festival::addPalco(Palco* const palco){
     getPalcos().push_back(palco);
 }
 
-Palco& Festival::removePalco(std::string& nomePalco){
+void Festival::removePalco(std::string& nomePalco){
     std::list<Palco*>::iterator it{getPalcos().begin()};
     for (; it != getPalcos().end(); ++it)
         if ((*it)->getNome() == nomePalco) break;

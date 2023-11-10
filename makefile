@@ -1,5 +1,5 @@
 parametrosCompilacao=-Wall #-Wshadow
-nomePrograma=festtival
+nomePrograma=festival
 
 all: $(nomePrograma)
 

@@ -9,13 +9,11 @@ class ArtistaInternacional : public Artista {
                          std::string pais);
     ArtistaInternacional(std::string nome, unsigned short int idade,
                          std::string tipoMusical, std::string pais);
-    unsigned int calculaCache() const override;
-    void apresentar() const override;
+    virtual unsigned int calculaCache() const override;
+    virtual void apresentar() const override;
 
     void setPais(const std::string pais);
     std::string getPais() const;
-
-    unsigned int ArtistaInternacional::calculaCache() const;
 
    private:
     std::string pais;

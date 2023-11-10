@@ -21,7 +21,7 @@ class Musica {
         unsigned short int getDuracao() const;
         
         void addEscritor(Artista* const escritor);
-        Artista& removeEscritor(std::string& nomeEscritor); 
+        void removeEscritor(std::string& nomeEscritor); 
         std::list<Artista*> getEscritores() const;
     
     private:

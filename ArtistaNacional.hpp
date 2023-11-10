@@ -9,8 +9,8 @@ public:
     ArtistaNacional(std::string nome, unsigned short int idade, std::string tipoMusical, std::string estado);
 
     
-    unsigned int calculaCache() const override;
-    void apresentar() const override;
+    virtual unsigned int calculaCache() const override;
+    virtual void apresentar() const override;
 
     std::string getEstado() const;
     void setEstado(const std::string estado);

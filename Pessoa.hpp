@@ -10,6 +10,7 @@ class Pessoa {
     Pessoa();
     Pessoa(const std::string nome);
     Pessoa(const std::string nome, unsigned short idade);
+    virtual ~Pessoa() = default;
 
 
     // uint64_t getCpf() const;

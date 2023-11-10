@@ -12,7 +12,7 @@ void Palco::addApresentacao(Apresentacao* const apresentacao) {
     getApresentacoes().push_back(apresentacao);
 }
 
-Apresentacao& Palco::removeApresentacao(std::string& nomeArtista) {
+void Palco::removeApresentacao(std::string& nomeArtista) {
     std::list<Apresentacao*>::iterator it{getApresentacoes().begin()};
     for (; it != getApresentacoes().end(); ++it)
         if ((*it)->getArtista()->getNome() == nomeArtista) break;
