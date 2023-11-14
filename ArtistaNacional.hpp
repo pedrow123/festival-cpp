@@ -5,8 +5,8 @@
 
 class ArtistaNacional : public Artista {
 public:
-    ArtistaNacional(std::string nome, unsigned short int idade, std::string estado);
-    ArtistaNacional(std::string nome, unsigned short int idade, std::string tipoMusical, std::string estado);
+    ArtistaNacional(std::string nome, unsigned short int anosAtividade, std::string estado);
+    ArtistaNacional(std::string nome, unsigned short int anosAtividade, std::string tipoMusical, std::string estado);
 
     
     virtual unsigned int calculaCache() const override;

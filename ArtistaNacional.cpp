@@ -2,13 +2,13 @@
 
 #include <iostream>
 
-ArtistaNacional::ArtistaNacional(std::string nome, unsigned short int idade,
+ArtistaNacional::ArtistaNacional(std::string nome, unsigned short int anosAtividade,
                                  std::string estado)
-    : Artista{nome, idade}, estado{estado} {}
+    : Artista{nome, anosAtividade}, estado{estado} {}
 
-ArtistaNacional::ArtistaNacional(std::string nome, unsigned short int idade,
+ArtistaNacional::ArtistaNacional(std::string nome, unsigned short int anosAtividade,
                                  std::string tipoMusical, std::string estado)
-    : Artista{nome, idade, tipoMusical}, estado{estado} {}
+    : Artista{nome, anosAtividade, tipoMusical}, estado{estado} {}
 
 std::string ArtistaNacional::getEstado() const { return this->estado; }
 

@@ -3,15 +3,15 @@
 #include <iostream>
 
 ArtistaInternacional::ArtistaInternacional(std::string nome,
-                                           unsigned short int idade,
+                                           unsigned short int anosAtividade,
                                            std::string pais)
-    : Artista{nome, idade}, pais{pais} {}
+    : Artista{nome, anosAtividade}, pais{pais} {}
 
 ArtistaInternacional::ArtistaInternacional(std::string nome,
-                                           unsigned short int idade,
+                                           unsigned short int anosAtividade,
                                            std::string tipoMusical,
                                            std::string pais)
-    : Artista{nome, idade, tipoMusical}, pais{pais} {}
+    : Artista{nome, anosAtividade, tipoMusical}, pais{pais} {}
 
 std::string ArtistaInternacional::getPais() const { return this->pais; }
 
