@@ -13,7 +13,7 @@ class Artista : public Pessoa {
     Artista(std::string nome, unsigned short int idade, std::string tipoMusical);
     virtual unsigned int calculaCache() const = 0;
     virtual void apresentar() const = 0;
-    virtual ~Artista() = default;
+    ~Artista();
 
     void adicionarMusica(Musica* musica);
     void removerMusica(const std::string& nomeMusica);

@@ -7,6 +7,12 @@ Musica::Musica(std::string nome, unsigned short int duracaoSegundos, std::list<A
 Musica::Musica(std::string nome, unsigned short int duracaoSegundos)
     : nome(nome), duracaoSegundos(duracaoSegundos) {}
 
+Musica::~Musica(){
+    std::list<Artista*>::iterator it;
+    for (it = getEscritores().begin(); it != getEscritores().end(); it++) 
+        delete *it;
+}
+
 void Musica::setNome(const std::string nome) {
     this->nome = nome;
 }

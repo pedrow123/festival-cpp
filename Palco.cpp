@@ -1,8 +1,15 @@
 #include "Palco.hpp"
 
 Palco::Palco(std::string nome) : nome{nome} {}
+
 Palco::Palco(std::string nome, std::list<Apresentacao*> apresentacoes)
     : nome{nome}, apresentacoes{apresentacoes} {}
+
+Palco::~Palco(){
+    std::list<Apresentacao*>::iterator it;
+    for (it = getApresentacoes().begin(); it != getApresentacoes().end(); it++) 
+        delete *it;
+}
 
 void Palco::setNome(const std::string nome) { this->nome = nome; }
 

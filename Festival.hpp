@@ -4,12 +4,14 @@
 #include <list>
 #include <string>
 
+#include "FestivalException.hpp"
 #include "Palco.hpp"
 
 class Festival {
    public:
     Festival(std::string nome);
     Festival(std::string nome, std::list<Palco*> palcos);
+    ~Festival();
 
     void setNome(const std::string nome);
     std::string getNome() const;

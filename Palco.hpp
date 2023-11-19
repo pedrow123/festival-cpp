@@ -10,6 +10,7 @@ class Palco {
    public:
     Palco(std::string nome);
     Palco(std::string nome, std::list<Apresentacao*> apresentacoes);
+    ~Palco();
 
     void setNome(const std::string nome);
     std::string getNome() const;

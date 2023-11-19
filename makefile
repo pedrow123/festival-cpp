@@ -3,8 +3,8 @@ nomePrograma=festival
 
 all: $(nomePrograma)
 
-$(nomePrograma): main.o Festival.o Apresentacao.o Artista.o ArtistaInternacional.o ArtistaNacional.o Musica.o Palco.o Pessoa.o
-	g++ -o $(nomePrograma) main.o Festival.o Apresentacao.o Artista.o ArtistaInternacional.o ArtistaNacional.o Musica.o Palco.o Pessoa.o $(parametrosCompilacao)
+$(nomePrograma): main.o Festival.o Apresentacao.o Artista.o ArtistaInternacional.o ArtistaNacional.o Musica.o Palco.o Pessoa.o FestivalException.o
+	g++ -o $(nomePrograma) main.o Festival.o Apresentacao.o Artista.o ArtistaInternacional.o ArtistaNacional.o Musica.o Palco.o Pessoa.o FestivalException.o $(parametrosCompilacao)
 
 main.o: main.cpp
 	g++ -c main.cpp $(parametrosCompilacao)
@@ -29,6 +29,9 @@ Apresentacao.o: Apresentacao.hpp Apresentacao.cpp
 
 Palco.o: Palco.hpp Palco.cpp
 	g++ -c Palco.cpp $(parametrosCompilacao)
+
+FestivalException.o: FestivalException.hpp FestivalException.cpp
+	g++ -c FestivalException.cpp $(parametrosCompilacao)
 
 Festival.o: Festival.hpp Festival.cpp
 	g++ -c Festival.cpp $(parametrosCompilacao)

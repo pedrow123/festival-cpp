@@ -8,7 +8,7 @@
 
 int main() {
     
-    std::cout << "Seja bem-vindo(a) ao FestNow! Visualize e o crie os Festivais mais badalados do momento!" std::endl;
+    std::cout << "Seja bem-vindo(a) ao FestNow! Visualize e o crie os Festivais mais badalados do momento!" << std::endl;
 
     std::list<Festival*> listaFestivais;
     Palco* cj{new Palco{"Cidade Jardim"}};
