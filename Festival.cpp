@@ -21,7 +21,7 @@ void Festival::addPalco(Palco* const palco) {
     }
 
     // Verifica se o palco já existe
-    for (Palco* p : palcos) {
+    for (Palco* p : this->palcos) {
         if (p->getNome() == palco->getNome()) {
             throw FestivalException(
                 "Palco com o mesmo nome já existe no festival.");

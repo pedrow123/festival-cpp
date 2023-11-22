@@ -36,6 +36,8 @@ Festival* criarFestival(){
             if(art == 1){
                 ArtistaInternacional* novoArtista;
                 std::string pais;
+                std::cout << "Digite o país do Artista: ";
+                std::cin >> pais;
                 novoArtista = new ArtistaInternacional{nomeArtista, anosAtividade, pais};
 
                 std::cout << "\nDigite o horário da apresentação: ";
@@ -98,14 +100,26 @@ int main() {
     std::cin >> op;
 
     std::list<Festival*>::iterator it;
+    std::list<Palco*>::iterator itPalco;
+    std::list<Apresentacao*>::iterator itAp;
     while (op != 5) {
         switch (op) {
             case 1:
-                criarFestival();
+                Festival* fest;
+                fest = criarFestival();
+                listaFestivais.push_back(fest);
                 break;
             case 2:
                 for (it = listaFestivais.begin(); it != listaFestivais.end(); ++it){
                     std::cout << (*it)->getNome() << "\n";
+                    std::cout << "aaaaaaaaaaaa";
+                    for(itPalco = (*it)->getPalcos().begin(); itPalco != (*it)->getPalcos().end(); ++itPalco){
+                        std::cout << "---> Nome do Palco: " << (*itPalco)->getNome();
+                        for(itAp = (*itPalco)->getApresentacoes().begin(); itAp != (*itPalco)->getApresentacoes().end(); ++itAp){
+                            std::cout << "-------------> ";
+                            (*itAp)->getArtista()->apresentar();
+                        }
+                    }
                 }
                 
                 break;
@@ -125,5 +139,17 @@ int main() {
         std::cout << "5. Sair\n";
         std::cin >> op;
     }
+
+    for (it = listaFestivais.begin(); it != listaFestivais.end(); ++it) {
+        for (itPalco = (*it)->getPalcos().begin(); itPalco != (*it)->getPalcos().end(); ++itPalco) {
+            for (itAp = (*itPalco)->getApresentacoes().begin(); itAp != (*itPalco)->getApresentacoes().end(); ++itAp) {
+                delete *itAp;  // Libera cada apresentação
+            }
+            delete *itPalco;  // Libera cada palco
+        }
+        delete *it;  // Libera cada festival
+    }
+
+
     return 0;
 }
