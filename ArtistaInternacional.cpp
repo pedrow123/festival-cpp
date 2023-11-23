@@ -22,7 +22,7 @@ void ArtistaInternacional::setPais(const std::string pais) {
 unsigned int ArtistaInternacional::calculaCache() const { return 1000; }
 
 void ArtistaInternacional::apresentar() const {
-    std::cout << "Artista Interacional - " << this->getNome();
+    std::cout << "Artista Interacional - " << getNome();
     std::cout << "Pais: " << getPais();
     std::cout << "Cache " << calculaCache() << std::endl;
 }

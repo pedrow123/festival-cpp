@@ -7,7 +7,7 @@
 class Apresentacao {
     public:
         Apresentacao(std::string horario, Artista* const artista);
-        ~Apresentacao();
+        virtual ~Apresentacao();
 
         std::string getHorario() const;
         void setHorario(const std::string horario);

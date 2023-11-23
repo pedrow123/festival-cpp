@@ -4,7 +4,7 @@ Apresentacao::Apresentacao(const std::string horario, Artista* const artista)
     : horario{horario}, artista{artista} {}
 
 Apresentacao::~Apresentacao(){
-    setArtista(nullptr);
+    delete this->artista;
 }
 
 std::string Apresentacao::getHorario() const { return this->horario; }

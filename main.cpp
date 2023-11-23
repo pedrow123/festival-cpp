@@ -17,13 +17,15 @@ Festival* criarFestival(){
 
     std::cout << "Digite os palcos e suas apresentaçoes.";
 
-    int op, opAp = 1;
+    int op = 1;
     while(op != 0){
         std::cout << "Digite o nome do palco\n";
         std::cin >> nome;
         Palco* novoPalco;
         novoPalco = new Palco{nome};
-        std::cout << "Digite as apresentações do Palco " << nome << ":\n";
+        std::cout << "Digite as apresentações do Palco " << novoPalco->getNome() << ":\n";
+
+        int opAp = 1;
         while(opAp != 0){
             std::string nomeArtista, horario;
             unsigned short int art, anosAtividade;
@@ -77,16 +79,17 @@ int main() {
     // Palco* bt{new Palco{"Butantã"}};
     // Palco* alt{new Palco{"Alternativo"}};
 
-    // Apresentacao* am{new Apresentacao{"21:30", new
-    // ArtistaInternacional{"Arctic Monkeys", 10, "Rock
-    // Alternativo","Inglaterra" }}}; Apresentacao* pr{new Apresentacao{"13:00",
-    // new ArtistaNacional{"Plebe Rude", 25, "Distrito Federal"}}};
+    // Apresentacao* am{new Apresentacao{"21:30", new ArtistaInternacional{"Arctic Monkeys", 10, "Rock Alternativo","Inglaterra" }}}; 
+    // cj->addApresentacao(am);
+    // Apresentacao* pr{new Apresentacao{"13:00", new ArtistaNacional{"Plebe Rude", 25, "Distrito Federal"}}};
+    // cj->addApresentacao(pr);
 
     // Festival* Lollapalooza{new Festival{"Lollapalooza"}};
 
-    // cj->addApresentacao(am);
-    // cj->addApresentacao(pr);
     // Lollapalooza->addPalco(cj);
+
+    // delete Lollapalooza;
+
 
     std::string nome;
 
@@ -100,8 +103,8 @@ int main() {
     std::cin >> op;
 
     std::list<Festival*>::iterator it;
-    std::list<Palco*>::iterator itPalco;
-    std::list<Apresentacao*>::iterator itAp;
+    std::list<Palco*>::const_iterator itPalco;
+    std::list<Apresentacao*>::const_iterator itAp;
     while (op != 5) {
         switch (op) {
             case 1:
@@ -111,11 +114,23 @@ int main() {
                 break;
             case 2:
                 for (it = listaFestivais.begin(); it != listaFestivais.end(); ++it){
-                    std::cout << (*it)->getNome() << "\n";
-                    std::cout << "aaaaaaaaaaaa";
-                    for(itPalco = (*it)->getPalcos().begin(); itPalco != (*it)->getPalcos().end(); ++itPalco){
+                    if ((*it) == nullptr) {
+                        std::cout << "It null\n";
+                        continue;
+                    }
+                    std::cout << "Nome Festival: " << (*it)->getNome() << "\n";
+                    for(itPalco = (*it)->getPalcos().begin(); itPalco != (*it)->getPalcos().end(); itPalco++){
+                        if ((*itPalco) == nullptr) {
+                            std::cout << "It Palco null\n";
+                            continue;
+                        }
                         std::cout << "---> Nome do Palco: " << (*itPalco)->getNome();
                         for(itAp = (*itPalco)->getApresentacoes().begin(); itAp != (*itPalco)->getApresentacoes().end(); ++itAp){
+                            if ((*itAp) == nullptr) {
+                                std::cout << "It Ap null\n";
+                                continue;
+                            }
+                            
                             std::cout << "-------------> ";
                             (*itAp)->getArtista()->apresentar();
                         }
@@ -141,12 +156,6 @@ int main() {
     }
 
     for (it = listaFestivais.begin(); it != listaFestivais.end(); ++it) {
-        for (itPalco = (*it)->getPalcos().begin(); itPalco != (*it)->getPalcos().end(); ++itPalco) {
-            for (itAp = (*itPalco)->getApresentacoes().begin(); itAp != (*itPalco)->getApresentacoes().end(); ++itAp) {
-                delete *itAp;  // Libera cada apresentação
-            }
-            delete *itPalco;  // Libera cada palco
-        }
         delete *it;  // Libera cada festival
     }
 

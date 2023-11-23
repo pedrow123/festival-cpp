@@ -7,7 +7,7 @@ Palco::Palco(std::string nome, std::list<Apresentacao*> apresentacoes)
 
 Palco::~Palco(){
     std::list<Apresentacao*>::iterator it;
-    for (it = getApresentacoes().begin(); it != getApresentacoes().end(); it++) 
+    for (it = this->apresentacoes.begin(); it != this->apresentacoes.end(); ++it) 
         delete *it;
 }
 
@@ -16,21 +16,21 @@ void Palco::setNome(const std::string nome) { this->nome = nome; }
 std::string Palco::getNome() const { return this->nome; }
 
 void Palco::addApresentacao(Apresentacao* const apresentacao) {
-    getApresentacoes().push_back(apresentacao);
+    this->apresentacoes.push_back(apresentacao);
 }
 
 void Palco::removeApresentacao(std::string& nomeArtista) {
-    std::list<Apresentacao*>::iterator it{getApresentacoes().begin()};
-    for (; it != getApresentacoes().end(); ++it)
+    std::list<Apresentacao*>::iterator it{this->apresentacoes.begin()};
+    for (; it != this->apresentacoes.end(); ++it)
         if ((*it)->getArtista()->getNome() == nomeArtista) break;
 
-    if (it != getApresentacoes().end()) {
+    if (it != this->apresentacoes.end()) {
         Apresentacao* ptr{*it};
-        getApresentacoes().erase(it);
+        this->apresentacoes.erase(it);
         delete ptr;
     }
 }
 
-std::list<Apresentacao*> Palco::getApresentacoes() const {
+const std::list<Apresentacao*>& Palco::getApresentacoes() const {
     return this->apresentacoes;
 }

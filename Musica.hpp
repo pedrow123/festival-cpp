@@ -13,7 +13,7 @@ class Musica {
     public:
         Musica(std::string nome, unsigned short int duracaoSegundos, std::list<Artista*> Escritores);
         Musica(std::string nome, unsigned short int duracaoSegundos);
-        ~Musica();
+        virtual ~Musica();
 
         void setNome(const std::string nome);
         std::string& getNome() const;

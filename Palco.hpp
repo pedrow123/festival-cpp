@@ -10,14 +10,14 @@ class Palco {
    public:
     Palco(std::string nome);
     Palco(std::string nome, std::list<Apresentacao*> apresentacoes);
-    ~Palco();
+    virtual ~Palco();
 
     void setNome(const std::string nome);
     std::string getNome() const;
 
     void addApresentacao(Apresentacao* const apresentacao);
     void removeApresentacao(std::string& nomeArtista);
-    std::list<Apresentacao*> getApresentacoes() const;
+    const std::list<Apresentacao*> &getApresentacoes() const;
 
    private:
     std::string nome;
