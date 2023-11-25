@@ -3,8 +3,8 @@ nomePrograma=festival
 
 all: $(nomePrograma)
 
-$(nomePrograma): main.o Festival.o Apresentacao.o Artista.o ArtistaInternacional.o ArtistaNacional.o Musica.o Palco.o Pessoa.o FestivalException.o
-	g++ -o $(nomePrograma) main.o Festival.o Apresentacao.o Artista.o ArtistaInternacional.o ArtistaNacional.o Musica.o Palco.o Pessoa.o FestivalException.o $(parametrosCompilacao)
+$(nomePrograma): main.o Gerenciador.o Festival.o Apresentacao.o Artista.o ArtistaInternacional.o ArtistaNacional.o Musica.o Palco.o Pessoa.o FestivalException.o
+	g++ -o $(nomePrograma) main.o Gerenciador.o Festival.o Apresentacao.o Artista.o ArtistaInternacional.o ArtistaNacional.o Musica.o Palco.o Pessoa.o FestivalException.o $(parametrosCompilacao)
 
 main.o: main.cpp
 	g++ -c main.cpp $(parametrosCompilacao)
@@ -35,6 +35,9 @@ FestivalException.o: FestivalException.hpp FestivalException.cpp
 
 Festival.o: Festival.hpp Festival.cpp
 	g++ -c Festival.cpp $(parametrosCompilacao)
+
+Gerenciador.o: Gerenciador.hpp Gerenciador.cpp
+	g++ -c Gerenciador.cpp $(parametrosCompilacao)
 
 clean:
 	rm -f *.o *.gch $(nomePrograma)
