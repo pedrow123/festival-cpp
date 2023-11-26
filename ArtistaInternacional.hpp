@@ -3,6 +3,7 @@
 
 #include "Artista.hpp"
 
+namespace festnow {
 class ArtistaInternacional : public Artista {
    public:
     ArtistaInternacional(std::string nome, unsigned short int anosAtividade,
@@ -10,13 +11,13 @@ class ArtistaInternacional : public Artista {
     ArtistaInternacional(std::string nome, unsigned short int anosAtividade,
                          std::string tipoMusical, std::string pais);
     virtual unsigned int calculaCache() const override;
-    virtual void apresentar() const override;
+    virtual std::string getOrigem() const override;
 
     void setPais(const std::string pais);
-    std::string getPais() const;
 
    private:
     std::string pais;
 };
+}
 
 #endif

@@ -3,10 +3,13 @@
 
 #include <list>
 #include <string>
+#include <iostream>
 
 #include "Apresentacao.hpp"
 
+namespace festnow {
 class Palco {
+   friend std::ostream& operator<<(std::ostream& stream, const Palco& palco);
    public:
     Palco(std::string nome);
     Palco(std::string nome, std::list<Apresentacao*> apresentacoes);
@@ -23,5 +26,6 @@ class Palco {
     std::string nome;
     std::list<Apresentacao*> apresentacoes;
 };
+}
 
 #endif

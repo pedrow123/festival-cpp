@@ -5,10 +5,12 @@
 #include "Artista.hpp"
 #include "ArtistaInternacional.hpp"
 #include "ArtistaNacional.hpp"
+#include "PalcoException.hpp"
 
 #include <string>
 #include <list>
 
+namespace festnow {
 class Gerenciador {
     public:
         Gerenciador(const std::list<Artista*> listaArtistas, const std::list<Festival*> listaFestivais);
@@ -19,6 +21,8 @@ class Gerenciador {
         Artista* criarArtista(std::string nomeArtista);
 
         void addArtista(Artista* const artista);
+        void regArtista();
+        void showArtistas();
         void removeArtista(std::string& nomeArtista);
         const std::list<Artista*> &getArtistas() const;
 
@@ -29,5 +33,6 @@ class Gerenciador {
         std::list<Artista*> listaArtistas;
         std::list<Festival*> listaFestivais;
 };
+}
 
 #endif

@@ -5,9 +5,13 @@
 #include <string>
 
 #include "FestivalException.hpp"
+#include "PalcoException.hpp"
 #include "Palco.hpp"
+#include <iostream>
 
+namespace festnow {
 class Festival {
+   friend std::ostream& operator<<(std::ostream& stream, const Festival& fest);
    public:
     Festival(std::string nome);
     Festival(std::string nome, std::list<Palco*> palcos);
@@ -25,5 +29,6 @@ class Festival {
     std::list<Palco*> palcos;
     // LineUp lineup;
 };
+}
 
 #endif

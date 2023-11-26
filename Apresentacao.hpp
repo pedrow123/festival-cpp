@@ -3,8 +3,11 @@
 
 #include <string>
 #include "Artista.hpp"
+#include <iostream>
 
+namespace festnow {
 class Apresentacao {
+    friend std::ostream& operator<<(std::ostream& stream, const Apresentacao& ap);
     public:
         Apresentacao(std::string horario, Artista* const artista);
         virtual ~Apresentacao();
@@ -20,5 +23,6 @@ class Apresentacao {
         std::string horario;
         Artista* artista;
 };
+}
 
 #endif

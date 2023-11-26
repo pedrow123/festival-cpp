@@ -5,16 +5,13 @@
 #include <string>
 
 
+namespace festnow {
 class Pessoa {
    public:
     Pessoa();
     Pessoa(const std::string nome);
     Pessoa(const std::string nome, unsigned short idade);
     virtual ~Pessoa() = default;
-
-
-    // uint64_t getCpf() const;
-    // void setCpf(const uint64_t novoCpf);
 
     std::string getNome() const;
     void setNome(const std::string& novoNome);
@@ -23,10 +20,9 @@ class Pessoa {
     void setIdade(const unsigned short novaIdade);
 
    private:
-    // bool validarCPF(uint64_t cpfTeste) const;
-
     std::string nome;
-    // uint64_t cpf;
-    uint8_t idade;
+    unsigned short int idade;
 };
+}
+
 #endif

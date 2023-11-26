@@ -1,5 +1,6 @@
 #include "Pessoa.hpp"
 
+namespace festnow {
 Pessoa::Pessoa(const std::string nome)
     : nome{nome} {}
 
@@ -19,5 +20,5 @@ unsigned short int Pessoa::getIdade() const {
 
 void Pessoa::setIdade(const unsigned short novaIdade) {
     this->idade = novaIdade;
-    // arrumar tratamento de erros
+}
 }
