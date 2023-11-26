@@ -17,6 +17,4 @@ void ArtistaNacional::setEstado(const std::string estado) {
     this->estado = estado;
 }
 
-unsigned int ArtistaNacional::calculaCache() const { return 1000; }
-
 }

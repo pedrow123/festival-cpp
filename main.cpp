@@ -20,6 +20,9 @@ int main() {
     usr->carregarCredenciais("usr.txt");
     adm->carregarCredenciais("adm.txt");
 
+
+    
+    std::cout << "Seja bem-vindo(a) ao FestNow! Visualize e o crie os Festivais mais badalados do momento!" << std::endl;
     while (true) {
         std::string nome;
         std::string senha;
@@ -40,9 +43,6 @@ int main() {
             std::cout << "\nNenhum usuário foi encontrado! Entre com um registrado";
         }
     }
-
-    
-    std::cout << "Seja bem-vindo(a) ao FestNow! Visualize e o crie os Festivais mais badalados do momento!" << std::endl;
 
     std::list<Festival*> listaFestivais;
     std::list<Artista*> listaArtistas;

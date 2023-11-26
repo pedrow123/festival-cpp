@@ -20,6 +20,4 @@ void ArtistaInternacional::setPais(const std::string pais) {
     this->pais = pais;
 }
 
-unsigned int ArtistaInternacional::calculaCache() const { return 1000; }
-
 }

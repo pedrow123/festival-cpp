@@ -11,7 +11,6 @@ class ArtistaNacional : public Artista {
     ArtistaNacional(std::string nome, unsigned short int anosAtividade,
                     std::string tipoMusical, std::string estado);
 
-    virtual unsigned int calculaCache() const override;
     virtual std::string getOrigem() const override;
 
     std::string getEstado() const;

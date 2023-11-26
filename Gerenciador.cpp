@@ -85,6 +85,7 @@ void Gerenciador::criarFestival(){
 
             if(it != this->listaArtistas.end()){
                 novaApresentacao = new Apresentacao{horario, (*it)};
+                std::cout << "Artista já foi registrado! Reaproveitando dados..." << std::endl;
             } else {
                 Artista* novoArtista;
                 novoArtista = criarArtista(nomeArtista);
@@ -163,6 +164,7 @@ void Gerenciador::regArtista() {
             Artista* novoArtista;
             novoArtista = criarArtista(nome);
             this->addArtista(novoArtista);
+            std::cout << "Artista registrado com sucesso!" << std::endl;
             break;
         }
     }

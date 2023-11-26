@@ -11,7 +11,6 @@ class Artista : public Pessoa {
    public:
     Artista(std::string nome, unsigned short int idade);
     Artista(std::string nome, unsigned short int idade, std::string tipoMusical);
-    virtual unsigned int calculaCache() const = 0;
     virtual std::string getOrigem() const = 0;
     virtual ~Artista();
 
@@ -21,7 +20,6 @@ class Artista : public Pessoa {
 
    private:
     std::string tipoMusical;
-    int cache;
 };
 }
 

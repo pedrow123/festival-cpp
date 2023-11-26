@@ -8,8 +8,8 @@ class Admin {
     public:
         bool verificarCredenciais(const std::string& nomeUsuario, const std::string& senha);
         void carregarCredenciais(const std::string& arquivo);
-        std::string nomeUsuario;
     private:
+        std::string nomeUsuario;
         std::string senha;
 };
 }

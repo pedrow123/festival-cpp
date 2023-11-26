@@ -27,7 +27,6 @@ class Festival {
    private:
     std::string nome;
     std::list<Palco*> palcos;
-    // LineUp lineup;
 };
 }
 
