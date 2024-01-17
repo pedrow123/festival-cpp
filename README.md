@@ -1,1 +1,2 @@
-Esse projeto é um gerenciador de festivais utilizando c++. O presente sistema tem como objetivo utilizar os principais conceitos de orientação a objetos, focado em c++.
+- Esse projeto é um gerenciador de festivais utilizando c++. O presente sistema tem como objetivo utilizar os principais conceitos de orientação a objetos, focado em c++.
+- O projeto foi realizado em dupla com meu amigo Fernando Gbur.
